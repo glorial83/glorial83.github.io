@@ -1,0 +1,32 @@
+{% assign navigation = site.data.navigation[include.nav] %}
+{% assign pages = site.pages %}
+
+{% for document in site.documents %}
+{% assign pages = pages | push: document %}
+{% endfor %}
+
+{% assign subpages = pages | where: "menu", false | sort: "order" %}
+{% assign pages = pages | where: "menu", true | sort: "order" %}
+{% assign count = 0%}
+
+{% for node in pages %}
+{% assign count = count | plus: 1 %}
+{% endfor %}
+
+<nav class="nav__list">
+  <ul class="nav__items">
+    {% for node in pages %}
+    <li>
+      <a href="{{ node.url | relative_url }}"><span class="nav__sub-title">{{ node.title }}</span></a>
+
+      <ul>
+      {% for subnode in subpages %}
+      {% if subnode.category == node.slug %}
+        <li><a href="{{ subnode.url | relative_url }}" {% if subnode.url == page.url %} class="active"{% endif %}>{{ subnode.title }}</a></li>
+      {% endif %}
+      {% endfor %}
+      </ul>
+    </li>
+    {% endfor %}
+  </ul>
+</nav>
