@@ -85,6 +85,7 @@ body {
 .page__content {
   h2 {
     padding-bottom: 0.5em;
+    padding-top: 2em;
     border-bottom: 1px solid $border-color;
   }
 
@@ -113,7 +114,7 @@ body {
   p,
   li,
   dl {
-    font-size: 1em;
+    font-size: 0.8em;
   }
 
   /* paragraph indents */
