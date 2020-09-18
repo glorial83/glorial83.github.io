@@ -123,7 +123,6 @@ Terminal 창에서 아래 명령어를 입력하면 서버가 실행됩니다.
 테마를 지정할 수 있습니다.
 
 ```yaml
-theme: "minimal-mistakes-jekyll"
 minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 ```
 
