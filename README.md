@@ -25,3 +25,4 @@ https://imreplay.com/blogging/minimal-mistakes-%ED%85%8C%EB%A7%88%EB%A5%BC-%EC%9
 https://theorydb.github.io/tag/dev-statisticsr/
 https://honbabzone.com/jekyll/start-gitHubBlog/
 https://wormwlrm.github.io/2018/07/13/How-to-set-Github-and-Jekyll-environment-on-Windows.html
+https://ansohxxn.github.io/blog/jekyll-directory-structure/#site-nav
