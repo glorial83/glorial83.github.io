@@ -2,6 +2,7 @@
 layout: single
 ---
 
+<!-- 내가 생성 -->
 {% assign category = site.featured_categories | where: "slug", page.slug | first %}
 {% if category %}
 {% assign posts = site.categories[page.slug] %}
