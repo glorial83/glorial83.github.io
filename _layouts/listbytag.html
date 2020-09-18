@@ -1,9 +1,8 @@
 ---
 layout: single
 ---
-<!-- ³»°¡ »ý¼º -->
-{% assign posts = site.tags[page.slug] | where: "categories", page.category %}
 
-{% for post in posts %}
-  {% include listbytagpost.html post=post link_title=true excerpt=true %}
-{% endfor %}
+<!-- ë‚´ê°€ìƒì„± -->
+{% assign posts = site.tags[page.slug] | where: "categories", page.category %}
+{% for post in posts %} {% include listbytagpost.html post=post link_title=true
+excerpt=true %} {% endfor %}
