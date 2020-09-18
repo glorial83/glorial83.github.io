@@ -29,6 +29,7 @@ Username, E-mail, Password 등 간단한 정보를 입력하면 됩니다.
 ![그림2](/images/2020-09-18-11-51-37.png)
 
 `Repository name`에 아이디.github.io를 입력하고 `Create repository` 를 클릭합니다.
+
 ![그림3](/images/2020-09-18-11-57-36.png)
 
 ## 3. GitKraken 설치
