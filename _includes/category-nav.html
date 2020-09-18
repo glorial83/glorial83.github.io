@@ -15,6 +15,8 @@
 {% endfor %}
 
 <nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox">
+  <label for="ac-toc">Toggle &quot;{{ page.toc_label | default: site.data.ui-text[site.locale].toc_label }}&quot;</label>
   <ul class="nav__items">
     {% for node in pages %}
     <li>
