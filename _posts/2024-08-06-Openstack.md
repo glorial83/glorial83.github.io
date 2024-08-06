@@ -10,11 +10,11 @@ classes: wide
 
 # OPENSTACK 2024.1 설치 + VirtualBox
 
-- Microstack, Devstack 모두 설치해 보았지만 성공하지 못했다
-- 정확히 말하자면 절반의 성공이었다
-- 그러던 와중에 Microstack이 실패한 원인을 찾던 중 계정이 제대로 생성이 되지 않은것을 발견했다
-- 어쩌면 Openstack도 계정이 정해져 있는게 아닐까? 라는 추론을 했고
-- 여러번의 시행착오 끝에 계정명이 핵심이란 것을 알았다
+> Microstack, Devstack 모두 설치해 보았지만 성공하지 못했다
+> 정확히 말하자면 절반의 성공이었다
+> 그러던 와중에 Microstack이 실패한 원인을 찾던 중 계정이 제대로 생성이 되지 않은것을 발견했다
+> 어쩌면 Openstack도 계정이 정해져 있는게 아닐까? 라는 추론을 했고
+> 여러번의 시행착오 끝에 계정명이 핵심이란 것을 알았다
 
 ## Ubuntu 22.04.4 LTS (Jammy Jellyfish) 다운로드
 
