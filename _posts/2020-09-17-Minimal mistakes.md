@@ -127,7 +127,7 @@ Terminal 창에서 아래 명령어를 입력하면 서버가 실행됩니다.
 minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 ```
 
-사이트에 기본 설정입니다.
+사이트의 기본 설정입니다.
 
 ```yaml
 locale: "ko-KR" #로케일
