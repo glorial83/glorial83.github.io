@@ -11,12 +11,12 @@ classes: wide
 > Openstack은 Cloud로써 굉장히 기능이 강력하였다  
 > 하지만 소규모이기 때문에 좀 더 가벼운 리소스로 Cloud를 구성하고 싶었다  
 > 그래서 기억을 더듬던 중 예전에 Youtube에서 보았던 댓글을 힌트 삼아 Proxmox를 설정해 보았다  
-> 외부에서 접속하기 위해 `pfSense + NPM` 도 추가해 보았지만 HTTP와 HTTPS에 특화되었기 때문에 ❌
+> 외부에서 접속하기 위해 `pfSense + NPM` 도 추가해 보았지만 HTTP와 HTTPS에 특화되었기 때문에 ❌  
 > `Tailscale`을 발견하고 route를 활용하여 외부 접속도 성공 할 수 있었다 🔆
 
 ## Proxmox 설치를 먼저 진행
 
-[Proxmox 설치](Proxmox)
+[Proxmox 설치](../Proxmox)
 
 ## [Proxmox VE Helper](https://tteck.github.io/Proxmox)의 Talescale 설치 명령어 검색
 
