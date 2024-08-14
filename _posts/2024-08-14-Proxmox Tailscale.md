@@ -156,7 +156,7 @@ https://login.tailscale.com/a/임의아이디
 
 ## 외부에서 사용할 PC의 `exit nodes`를 컨테이너로 지정해준다
 
-![tailscale-exit](/images/2024-08-14-18-10-51.png)
+![tailscale-exit](/images/2024-08-14-18-24-39.png)
 
 # 기타 명령어
 
