@@ -1,0 +1,6 @@
+{
+  "pasteImage.path": "${projectRoot}/images/${currentFileNameWithoutExt}",
+  "pasteImage.insertPattern": "${imageSyntaxPrefix}/${imageFilePath}${imageSyntaxSuffix}",
+  "pasteImage.basePath": "${projectRoot}",
+  "editor.formatOnSave": true
+}
