@@ -140,7 +140,10 @@ default view일 때만 활성화되는 filter를 항상 나오게 변경했다
   no-label-float
   noink
   no-animations
-></paper-dropdown-menu>
+>
+  ...중략...
+</paper-dropdown-menu>
+{% endif %}
 ```
 
 ## Footer 제거
