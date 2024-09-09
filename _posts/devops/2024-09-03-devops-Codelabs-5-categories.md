@@ -2,17 +2,17 @@
 title: "Codelabs Categories 추가"
 categories: devops
 tags: codelab
-last_modified_at: 2024-09-03T12:00:00+09:00
+last_modified_at: 2024-09-03T11:00:00+09:00
 #classes: wide
 toc: true
 toc_sticky: true
 ---
 
-# 색상, 아이콘 추가
+## 색상, 아이콘 추가
 
 `/site/app/styles/_categories.scss` 를 수정한다
 
-## 색상코드 추가
+### 색상코드 추가
 
 ```scss
 $color-amqp-blue: #20329f;
@@ -45,7 +45,7 @@ $color-spark-orange: #e77215;
 $color-sap-blue: #00418d;
 ```
 
-## 아이콘 추가
+### 아이콘 추가
 
 ```scss
 @include codelab-card([ "java"], $color-java-red, "java.svg");
@@ -55,7 +55,7 @@ $color-sap-blue: #00418d;
 @include codelab-card([ "sap"], $color-sap-blue, "sap.png");
 ```
 
-# 아이콘 이미지 추가
+## 아이콘 이미지 추가
 
 `/site/app/images/icons` 경로에 실제 사용될 아이콘 이미지를 추가한다  
 `.svg` 또는 `.png` 등 이미지 파일을 추가한다
@@ -66,7 +66,7 @@ $color-sap-blue: #00418d;
 > 색상코드 추출  
 > [https://imagecolorpicker.com](https://imagecolorpicker.com)
 
-# 여러 카테고리가 보이게 처리
+## 여러 카테고리가 보이게 처리
 
 코드랩에 카테고리를 추가하면 대표 하나만 보이게 설정되어있다
 
@@ -76,20 +76,20 @@ $color-sap-blue: #00418d;
 
 ![google-codelab](/images/2024-09-03-devops-Codelabs-categories/2024-09-09-13-10-47.png)
 
-## scss 수정
+### scss 수정
 
 `/site/app/styles/_codelab-card.scss` 파일을 열어  
 card-footer하위에 `category-icon-container` Class를 추가하자
 
 ![icon-container](/images/2024-09-03-devops-Codelabs-categories/2024-09-09-13-14-20.png)
 
-## 랜딩페이지 수정
+### 랜딩페이지 수정
 
 `/site/app/views/default/index.html` 파일을 열어 아래처럼 반복문을 추가하자
 
 ![card-footer](/images/2024-09-03-devops-Codelabs-categories/2024-09-09-13-17-00.png)
 
-# 최종결과
+## 최종결과
 
 category가 모두 아이콘형태로 변환된 걸 확인 할 수 있다😁
 

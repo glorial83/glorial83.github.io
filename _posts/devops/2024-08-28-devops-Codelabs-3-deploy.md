@@ -2,20 +2,20 @@
 title: "Codelabs 배포"
 categories: devops
 tags: codelab
-last_modified_at: 2024-09-01T11:00:00+09:00
+last_modified_at: 2024-09-01T12:00:00+09:00
 #classes: wide
 toc: true
 toc_sticky: true
 ---
 
-# 배포용 소스로 로컬테스트
+## 배포용 소스로 로컬테스트
 
     #./site
     gulp serve:dist
 
 - [https://github.com/googlecodelabs/tools/tree/main/site#development](https://github.com/googlecodelabs/tools/tree/main/site#development)
 
-## 권한 오류
+### 권한 오류
 
 아래 처럼 오류가 난다면....
 
@@ -27,7 +27,7 @@ VSCode를 관리자 권한으로 실행 하면 된다
 
 ![runas-admin](/images/2024-08-28-devops-Codelabs-deploy/2024-09-03-11-14-00.png)
 
-# 배포용 소스 생성
+## 배포용 소스 생성
 
     cd site
 
@@ -41,9 +41,9 @@ VSCode를 관리자 권한으로 실행 하면 된다
 
 - [https://github.com/googlecodelabs/tools/blob/main/site/README.md#options](https://github.com/googlecodelabs/tools/blob/main/site/README.md#options)
 
-# `gulp:serve`와 `gulp serve:dist`의 결과가 다르게 나올 경우
+## `gulp:serve`와 `gulp serve:dist`의 결과가 다르게 나올 경우
 
-## dist 옵션 조정 : browser
+### dist 옵션 조정 : browser
 
 `./site/tasks/helpers/opts.js`
 
@@ -72,7 +72,7 @@ VSCode를 관리자 권한으로 실행 하면 된다
             "maintained node versions"
           ],
 
-## dist 옵션 조정 : minify
+### dist 옵션 조정 : minify
 
 `site/gulpfile.js` 일부 주석
 
@@ -84,7 +84,7 @@ VSCode를 관리자 권한으로 실행 하면 된다
       //'minify:js',
     ));
 
-# 배포대상 추출
+## 배포대상 추출
 
 1. dist 폴더(codelabs제외) 전체를 root로
 
@@ -117,6 +117,6 @@ VSCode를 관리자 권한으로 실행 하면 된다
    └── vslive
    ```
 
-# 배포결과
+## 배포결과
 
 ![github-io](/images/2024-08-28-devops-Codelabs-deploy/2024-09-03-12-25-35.png)

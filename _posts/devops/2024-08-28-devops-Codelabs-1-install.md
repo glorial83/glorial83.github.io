@@ -2,7 +2,7 @@
 title: "Self-Hosted Codelabs 만들기"
 categories: devops
 tags: codelab
-last_modified_at: 2024-08-28T10:00:00+09:00
+last_modified_at: 2024-08-28T09:00:00+09:00
 #classes: wide
 toc: true
 toc_sticky: true

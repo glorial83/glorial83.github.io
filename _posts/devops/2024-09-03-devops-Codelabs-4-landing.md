@@ -8,7 +8,7 @@ toc: true
 toc_sticky: true
 ---
 
-# 랜딩페이지 view.json 수정
+## 랜딩페이지 view.json 수정
 
 `/site/app/views/default/view.json` 을 편집
 
@@ -26,15 +26,15 @@ toc_sticky: true
 }
 ```
 
-# 로고 교체
+## 로고 교체
 
 `/site/app/images/logo.png`를 교체
 
-# 랜딩페이지 수정
+## 랜딩페이지 수정
 
 `/site/app/views/default/index.html` 을 편집하여 자기만의 사이트를 구성할 수 있다
 
-## 언어 수정
+### 언어 수정
 
 `en`을 `ko`로 변경한다
 
@@ -42,7 +42,7 @@ toc_sticky: true
 <html lang="ko"></html>
 ```
 
-## Google Analystics 제거
+### Google Analystics 제거
 
 아래 구문을 제거한다
 
@@ -61,19 +61,20 @@ toc_sticky: true
 <script async src="https://www.google-analytics.com/analytics.js"></script>
 ```
 
-## Header 수정
+### Header 수정
 
 나는 불필요한 설명은 제거했다
 
-<변경 전>
+변경 전
+{% highlight html%}
+{% raw %}
 
-```html
-<header id="banner" ...중략...>
+<header id="banner"  {% if view.id != 'default' -%}down{%- else %}down$="[[_toBoolean(selectedFilter)]]"{%- endif %}>
   <div class="site-width">
     {% if view.id == 'default' %}
     <h2 class="banner-title">Welcome to Codelabs!</h2>
     <div class="banner-description"
-          data-filter-selected$="{% raw %}[[_toBoolean(selectedFilter)]]{% endraw %}">
+          data-filter-selected$="[[_toBoolean(selectedFilter)]]">
       <p class="banner-info">
         Codelabs provide a guided, tutorial, hands-on
         coding experience. Most codelabs will step you through the process
@@ -95,12 +96,14 @@ toc_sticky: true
       </div>
   </div>
 </header>
-```
+{% endraw %}
+{% endhighlight %}
 
-<변경 후>
+변경 후
+{% highlight html%}
+{% raw %}
 
-```html
-<header id="banner" ...중략...>
+<header id="banner"  {% if view.id != 'default' -%}down{%- else %}down$="[[_toBoolean(selectedFilter)]]"{%- endif %}>
   <div class="site-width">
     <div class="banner-description">
       <div class="banner-meta">
@@ -109,44 +112,36 @@ toc_sticky: true
     </div>
   </div>
 </header>
-```
+{% endraw %}
+{% endhighlight %}
 
-## Main 수정
-
-### view filter 활성화
+### Main view filter 활성화
 
 default view일 때만 활성화되는 filter를 항상 나오게 변경했다
 
-<변경 전>
-
-```html
+변경 전
+{% highlight html%}
+{% raw %}
 {% if view.id == 'default' && views|length > 1 %}
-<paper-dropdown-menu
-  label="Choose an event"
-  class="dropdown-filter"
-  no-label-float
-  noink
-  no-animations
-></paper-dropdown-menu>
-```
-
-<변경 후>
-
-```html
-{% if views|length > 1 %}
-<paper-dropdown-menu
-  label="Choose an event"
-  class="dropdown-filter"
-  no-label-float
-  noink
-  no-animations
->
-  ...중략...
+<paper-dropdown-menu label="Choose an event" class="dropdown-filter" no-label-float noink  no-animations>
+...중략...
 </paper-dropdown-menu>
 {% endif %}
-```
+{% endraw %}
+{% endhighlight %}
 
-## Footer 제거
+변경 후
+{% highlight html%}
+{% raw %}
+{% if views|length > 1 %}
+<paper-dropdown-menu label="Choose an event" class="dropdown-filter" no-label-float noink  no-animations>
+...중략...
+</paper-dropdown-menu>
+{% endif %}
+{% endraw %}
+{% endhighlight %}
+
+### Footer 제거
 
 불필요한 영역을 제거했다
 
@@ -154,7 +149,7 @@ default view일 때만 활성화되는 filter를 항상 나오게 변경했다
 <footer id="footer"></footer>
 ```
 
-## Address 수정
+### Address 수정
 
 주소와 연락처를 수정했다
 
