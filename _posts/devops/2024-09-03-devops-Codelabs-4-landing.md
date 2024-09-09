@@ -165,3 +165,46 @@ default view일 때만 활성화되는 filter를 항상 나오게 변경했다
   </div>
 </div>
 ```
+
+## html용 함수추가
+
+`/site/gulpfile.js` 파일 수정
+
+### 함수생성
+
+```javascript
+// tagClass converts the codelab to its corresponding CSS class.
+const tagClass = (codelab) => {
+  return codelab.tags[0].toLowerCase().replace(/\s/g, "-");
+};
+```
+
+### viewfunc에 추가
+
+```javascript
+const viewFuncs = {
+  ...중략...
+  // tagClass returns the top-level tagClass function.
+  tagClass: () => {
+    return tagClass;
+  },
+}
+```
+
+### locals에 추가
+
+```javascript
+let locals = {
+  baseUrl: BASE_URL,
+  categories: categories,
+  codelabs: codelabs,
+  ga: ga,
+  showcats: categories.length > 1,
+  view: view,
+  views: all.views,
+
+  ...중략...
+
+  tagClass: viewFuncs.tagClass(),
+};
+```
