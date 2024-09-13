@@ -12,6 +12,9 @@ toc_sticky: true
 
     go install github.com/googlecodelabs/tools/claat@latest
 
+    # 설치경로
+    C:\Users\사용자\go\pkg\mod\github.com\googlecodelabs\tools\claat@v0.0.0-20240220115335-873fe39d02dc
+
 ## 2. Codelab example doc 사본저장
 
 [https://docs.google.com/document/d/1E6XMcdTexh5O8JwGy42SY3Ehzi8gOfUGiqTiUX6N04o](https://docs.google.com/document/d/1E6XMcdTexh5O8JwGy42SY3Ehzi8gOfUGiqTiUX6N04o)
