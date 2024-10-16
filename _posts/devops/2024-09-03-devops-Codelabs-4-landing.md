@@ -168,7 +168,10 @@ default view일 때만 활성화되는 filter를 항상 나오게 변경했다
 
 ## html용 함수추가
 
-`/site/gulpfile.js` 파일 수정
+`/site/gulpfile.js` 파일 수정  
+지정한 `tag`를 `Kebab Case`로 변경하여 `Start` 버튼의 색상이 적용될 수 있도록 변경하였다.
+
+- 함수 호출부 [랜딩페이지 수정]({% link _posts/devops/2024-09-03-devops-Codelabs-5-categories.md %}#랜딩페이지-수정)
 
 ### 함수생성
 
