@@ -45,6 +45,7 @@ path: /tags/
 - https://honbabzone.com/jekyll/start-gitHubBlog/
 - https://wormwlrm.github.io/2018/07/13/How-to-set-Github-and-Jekyll-environment-on-Windows.html
 - https://ansohxxn.github.io/blog/jekyll-directory-structure/#site-nav
+- 포스트 링크 https://jekyllrb.com/docs/liquid/tags/
 
 # 테스트
 
