@@ -211,3 +211,37 @@ let locals = {
   tagClass: viewFuncs.tagClass(),
 };
 ```
+
+## 한글화
+
+### 예상시간
+
+`/site/app/views/default/index.html` 파일 수정
+
+{% highlight html%}
+{% raw %}
+
+<div class="card-duration">
+  <span>{%- if codelab.duration -%}{{codelab.duration}} 분 {%- endif -%}</span>
+  <span>{%- if codelab.updated -%}Updated {{codePrettyDate(codelab.updated)}}{%- endif -%}</span>
+</div>
+{% endraw %}
+{% endhighlight %}
+
+### 날짜
+
+`/site/gulpfile.js` 파일 수정
+
+```javascript
+codelabPrettyDate: () => {
+  return (ts) => {
+    const monthNames = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
+    const d = new Date(ts);
+    const month = monthNames[d.getMonth()];
+    const date = d.getUTCDate();
+    const year = d.getFullYear();
+
+    return `${year}년 ${month}월 ${date}일`;
+  }
+},
+```

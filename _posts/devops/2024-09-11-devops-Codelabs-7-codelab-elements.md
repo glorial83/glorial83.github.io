@@ -31,6 +31,7 @@ toc_sticky: true
   - google_codelab.scss : google-codelab .metadata .material-icons
 - 주요 문구의 한글화
   - google_codelab.soy : report a bug
+  - google_codelab.soy : min left, mins left
   - google_codelab_about.soy : About this codelab, Written by
 - 기본 텍스트 색상
   - index.scss : body
@@ -109,6 +110,20 @@ google_codelab.soy : report a bug
       오류 신고
     {/msg}
   </a>
+</div>
+```
+
+google_codelab.soy : min left, mins left
+
+```html
+<div
+  class="time-remaining"
+  tabindex="0"
+  role="timer"
+  title="남은 예상 시간: {$time}분"
+>
+  <i class="material-icons">access_time</i>
+  {$time}분 남음
 </div>
 ```
 
