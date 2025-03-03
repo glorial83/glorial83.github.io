@@ -1,7 +1,7 @@
 ---
-title: "Springfox -> Springdoc 전환"
+title: "SpringDoc 전환기"
 categories: java
-tags: spring swagger springdoc springfox
+tags: spring mvc swagger springdoc springfox
 last_modified_at: 2025-02-27T15:00:00+09:00
 #classes: wide
 toc: true
@@ -685,11 +685,11 @@ return Jwts.parser()
 
 응 안돼 더해야 해 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
 
-content-type을 안넣어주네? 
+Content-Type을 안넣어주네? 
 
-이게 뭔가 규약에 맞게 한거라는데 get,delete일 때는 content-type을 안보내준다는거임...
+이게 뭔가 규약에 맞게 한거라는데 get,delete일 때는 Content-Type을 안보내준다는거임...
 
-도대체 왜 그러냐 Postman은 되는데 왜 너넨 안됨? 해도 응 안해줄꺼야 의미 없어 라고 해버리니
+도대체 왜 그러냐 Postman은 되는데 왜 너넨 안됨? 해도 응 안해줄꺼야! 의미 없어! 라고 해버리니
 
 뭐....
 
@@ -942,3 +942,49 @@ public class SwaggerGroupsConfig {
 
 보아하니 Multipart일 때도 이짓거리 해야 할것 같은데?! ㅋㅋㅋㅋㅋㅋㅋㅋ
 
+
+# 참고URL
+
+- https://springdoc.org/faq.html
+
+- https://github.com/springdoc/springdoc-openapi-demos/blob/master/demo-spring-boot-3-webmvc/src/main/java/org/springdoc/demo/app2/model/Pet.java
+
+- https://stackoverflow.com/questions/59871209/how-to-integrate-open-api-3-with-spring-project-not-spring-boot-using-springdo
+
+- https://github.com/springdoc/springdoc-openapi/issues/250
+
+- https://github.com/essentialprogramming/undertow-spring-web/blob/master/src/main/java/com/undertow/standalone/UndertowServer.java
+
+- https://github.com/springdoc/springdoc-openapi/issues/841
+
+- https://github.com/springdoc/springdoc-openapi/issues/657
+
+- https://velog.io/@numerical43/java-spring-swagger-springdoc-openapi
+
+- https://velog.io/@jh9/jjwt
+
+- https://stackoverflow.com/questions/59560763/default-value-for-accept-header-using-springdoc-openapi
+
+- https://jeonyoungho.github.io/posts/Open-API-3.0-Swagger-v3-%EC%83%81%EC%84%B8%EC%84%A4%EC%A0%95/
+
+- https://sjh9708.tistory.com/169
+
+- https://blaxsior-repository.tistory.com/287
+
+- https://yeonyeon.tistory.com/322, https://yeonyeon.tistory.com/324  *최고입니다*
+
+- https://blog.naver.com/kisukim94/223773992123 *HTTP Method별 유형*
+
+- https://colabear754.tistory.com/99 *Fox -> Doc 전환*
+
+- https://kdev.ing/springdoc-openapi-ui/ *Outstanding!!*
+
+- https://data-make.tistory.com/550
+
+- https://stackoverflow.com/questions/63627462/swagger-openapi-3-0-springdoc-groupedopenapi-not-working-in-spring-mvc
+
+- https://stackoverflow.com/questions/75967916/configure-groups-into-springdoc-openapi
+
+- https://stackoverflow.com/questions/75136114/springdoc-openapi-3-0-swagger-groupedopenapi-not-working-in-spring-mvc
+
+- https://tg360.tistory.com/entry/Springdoc-openapi%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-Spring-Boot-%EA%B8%B0%EB%B0%98-API%EC%9D%98-%EB%AC%B8%EC%84%9C-%EC%9E%90%EB%8F%99%ED%99%94
