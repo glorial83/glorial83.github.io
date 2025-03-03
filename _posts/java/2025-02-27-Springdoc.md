@@ -703,32 +703,32 @@ OK, Let's go.
 
 ```java
 @Bean
-    public OperationCustomizer addHeaderCustomizer() {
-        RequestBody requestBody = new RequestBody().content(new Content().addMediaType(org.springframework.http.MediaType.APPLICATION_JSON_VALUE, new MediaType()));
+public OperationCustomizer addHeaderCustomizer() {
+    RequestBody requestBody = new RequestBody().content(new Content().addMediaType(org.springframework.http.MediaType.APPLICATION_JSON_VALUE, new MediaType()));
 
-        return (operation, handlerMethod) -> {
-            operation.addParametersItem(new Parameter()
-                .name(HttpHeaders.ACCEPT_LANGUAGE)
-                .in("header")
-                .schema(new StringSchema())
-                .required(true)
-                .example(Locale.KOREAN.toString()));
+    return (operation, handlerMethod) -> {
+        operation.addParametersItem(new Parameter()
+            .name(HttpHeaders.ACCEPT_LANGUAGE)
+            .in("header")
+            .schema(new StringSchema())
+            .required(true)
+            .example(Locale.KOREAN.toString()));
 
-            operation.addParametersItem(new Parameter()
-                .name(JwtUtil.HEADER_X_CLIENT_ID)
-                .in("header")
-                .schema(new StringSchema())
-                .required(true)
-                .example("swaggertest"));
+        operation.addParametersItem(new Parameter()
+            .name(JwtUtil.HEADER_X_CLIENT_ID)
+            .in("header")
+            .schema(new StringSchema())
+            .required(true)
+            .example("swaggertest"));
 
-            // RequestBody가 없으면 넣어!!! Get,Put이어도 상관말고 그냥 넣어!!!!!!!!
-            if (operation.getRequestBody() == null) {
-                operation.setRequestBody(requestBody);
-            }
+        // RequestBody가 없으면 넣어!!! Get,Put이어도 상관말고 그냥 넣어!!!!!!!!
+        if (operation.getRequestBody() == null) {
+            operation.setRequestBody(requestBody);
+        }
 
-            return operation;
-        };
-    }
+        return operation;
+    };
+}
 ```
 
 ### 8. API Group으로 나누기
@@ -960,7 +960,7 @@ public class SwaggerGroupsConfig {
 보아하니 Multipart일 때도 이짓거리 해야 할것 같은데?! ㅋㅋㅋㅋㅋㅋㅋㅋ
 
 
-# 참고URL
+## 참고URL
 
 - https://springdoc.org/faq.html
 
