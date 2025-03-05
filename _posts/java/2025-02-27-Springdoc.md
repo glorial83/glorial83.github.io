@@ -30,7 +30,7 @@ SpringBoot가 아닌 구조에서 위의 Dependency들을 추가한다는게 조
 
 일단 되든안되든 어떤 부작용이 나타날지 모르니 시도해보기로 했다.
 
-## 변환 시작 🍟🍟
+## 변환 시작 🙌
 
 ### 1. Dependency 교체
 
@@ -77,29 +77,28 @@ Controller와 DTO에서 사용했던 SpringFox만의 Annotation을 교체해야 
 
 #### Controller
 
-|SpringFox|SpringDoc|비고|
-|-----|----|---|
-|@Api(value = "SampleController", tags = "샘플")|@Tag(name = "SampleController", description = "샘플")|  |
-|@ApiOperation(value = "샘플 목록 조회", notes="[{\"test\":\"test1\"}]")|@Operation(summary = "샘플 목록 조회", description="[{\"test\":\"test1\"}]")|  |
-|@ApiParam(value = "검색조건", required = true)|@Parameter(description = "검색조건", required = true)| Querystring |
-|@ApiParam(value = "검색조건", required = true)|@Parameter(description = "검색조건", in = ParameterIn.PATH, required = true)| PathVariable |
-|@ApiParam(value = "검색조건", required = true) | @ParameterObject | ModelAttribute |
-|@ApiParam(value = "데이터", required = true) | - | RequestBody |
-|@ApiImplicitParams({@ApiImplicitParam(name = "projectCd", value = "프로젝트코드", paramType = "path", required = true)})|@Parameters({@Parameter(name = "projectCd", description = "프로젝트코드", in = ParameterIn.PATH, required = true)})||
-|@ApiOperation(value = "게시판 첨부파일 업로드", produces = MediaType.MULTIPART_FORM_DATA_VALUE)  @ApiImplicitParams({@ApiImplicitParam(name = "attachCd", value = "첨부파일코드", paramType = "form")})|@Operation(summary = "게시판 첨부파일 업로드",requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(content = @Content(mediaType = MediaType.MULTIPART_FORM_DATA_VALUE)))  @Parameters({@Parameter(name = "attachCd", description = "첨부파일코드", in = ParameterIn.QUERY)})|_확인필요_|
-|@ApiIgnore|@Hidden||
+| SpringFox                                                                                                                                                                                              | SpringDoc                                                                                                                                                                                                                                                                                  | 비고           |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------- |
+| @Api(value = "SampleController", tags = "샘플")                                                                                                                                                        | @Tag(name = "SampleController", description = "샘플")                                                                                                                                                                                                                                      |                |
+| @ApiOperation(value = "샘플 목록 조회", notes="[{\"test\":\"test1\"}]")                                                                                                                                | @Operation(summary = "샘플 목록 조회", description="[{\"test\":\"test1\"}]")                                                                                                                                                                                                               |                |
+| @ApiParam(value = "검색조건", required = true)                                                                                                                                                         | @Parameter(description = "검색조건", required = true)                                                                                                                                                                                                                                      | Querystring    |
+| @ApiParam(value = "검색조건", required = true)                                                                                                                                                         | @Parameter(description = "검색조건", in = ParameterIn.PATH, required = true)                                                                                                                                                                                                               | PathVariable   |
+| @ApiParam(value = "검색조건", required = true)                                                                                                                                                         | @ParameterObject                                                                                                                                                                                                                                                                           | ModelAttribute |
+| @ApiParam(value = "데이터", required = true)                                                                                                                                                           | -                                                                                                                                                                                                                                                                                          | RequestBody    |
+| @ApiImplicitParams({@ApiImplicitParam(name = "projectCd", value = "프로젝트코드", paramType = "path", required = true)})                                                                               | @Parameters({@Parameter(name = "projectCd", description = "프로젝트코드", in = ParameterIn.PATH, required = true)})                                                                                                                                                                        |                |
+| @ApiOperation(value = "게시판 첨부파일 업로드", produces = MediaType.MULTIPART_FORM_DATA_VALUE) @ApiImplicitParams({@ApiImplicitParam(name = "attachCd", value = "첨부파일코드", paramType = "form")}) | @Operation(summary = "게시판 첨부파일 업로드",requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(content = @Content(mediaType = MediaType.MULTIPART_FORM_DATA_VALUE))) @Parameters({@Parameter(name = "attachCd", description = "첨부파일코드", in = ParameterIn.QUERY)}) | _확인필요_     |
+| @ApiIgnore                                                                                                                                                                                             | @Hidden                                                                                                                                                                                                                                                                                    |                |
 
 #### DTO
 
-|SpringFox|SpringDoc|비고|
-|-----|----|---|
-|@ApiModelProperty(value = "부서코드", position = 1, example = "D0001", readOnly=true)|@Schema(description = "부서코드", example = "D0001", accessMode = AccessMode.READ_ONLY)||
-|@ApiModelProperty(value = "부서코드", position = 1, example = "D0001", nullable=true)|@Schema(description = "부서코드", example = "D0001", allowEmptyValue = true)||
-|@ApiModelProperty(value = "등록일자(시작)", position = 4, dataType = "yyyyMMdd")|@Schema(description = "등록일자(시작)", type = "string", pattern = "yyyyMMdd")||
-|@ApiModelProperty(value = "최종로그인일시", position = 25)|@Schema(description = "최종로그인일시", example = "yyyy-MM-dd HH:mm:ss.SSS", type = "string", pattern = "yyyy-MM-dd HH:mm:ss.SSS")|LocalDateTime|
-|@ApiModelProperty(value = "등록일시", position = 91, example = "yyyy-MM-dd HH:mm:ss.SSS", dataType = "yyyy-MM-dd HH:mm:ss.SSS", readOnly = true)|@Schema(description = "등록일시", example = "yyyy-MM-dd HH:mm:ss.SSS", type = "string", pattern = "yyyy-MM-dd HH:mm:ss.SSS", accessMode = AccessMode.READ_ONLY)|LocalDateTime|
-|@ApiModelProperty(hidden = true)|@Schema(hidden = true)||
-
+| SpringFox                                                                                                                                        | SpringDoc                                                                                                                                                       | 비고          |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| @ApiModelProperty(value = "부서코드", position = 1, example = "D0001", readOnly=true)                                                            | @Schema(description = "부서코드", example = "D0001", accessMode = AccessMode.READ_ONLY)                                                                         |               |
+| @ApiModelProperty(value = "부서코드", position = 1, example = "D0001", nullable=true)                                                            | @Schema(description = "부서코드", example = "D0001", allowEmptyValue = true)                                                                                    |               |
+| @ApiModelProperty(value = "등록일자(시작)", position = 4, dataType = "yyyyMMdd")                                                                 | @Schema(description = "등록일자(시작)", type = "string", pattern = "yyyyMMdd")                                                                                  |               |
+| @ApiModelProperty(value = "최종로그인일시", position = 25)                                                                                       | @Schema(description = "최종로그인일시", example = "yyyy-MM-dd HH:mm:ss.SSS", type = "string", pattern = "yyyy-MM-dd HH:mm:ss.SSS")                              | LocalDateTime |
+| @ApiModelProperty(value = "등록일시", position = 91, example = "yyyy-MM-dd HH:mm:ss.SSS", dataType = "yyyy-MM-dd HH:mm:ss.SSS", readOnly = true) | @Schema(description = "등록일시", example = "yyyy-MM-dd HH:mm:ss.SSS", type = "string", pattern = "yyyy-MM-dd HH:mm:ss.SSS", accessMode = AccessMode.READ_ONLY) | LocalDateTime |
+| @ApiModelProperty(hidden = true)                                                                                                                 | @Schema(hidden = true)                                                                                                                                          |               |
 
 ### 3. SwaggerConfig 수정
 
@@ -107,10 +106,11 @@ Controller와 DTO에서 사용했던 SpringFox만의 Annotation을 교체해야 
 
 1. 기본 Consume, Produce의 MediaType JSON 고정
 2. 기본 Header 지정
-  - Authorization
-  - Content-Type
-  - Accept-Language
-  - X-Client-Id (custom header)
+
+- Authorization
+- Content-Type
+- Accept-Language
+- X-Client-Id (custom header)
 
 ```java
 import java.time.Duration;
@@ -380,7 +380,6 @@ public class TestSwaggerConfig implements WebMvcConfigurer {
         };
     }
 
-    @Bean
     public OperationCustomizer addHeaderCustomizer() {
         return (OperationCustomizer) (operation, handlerMethod) -> {
             operation.addParametersItem(new io.swagger.v3.oas.models.parameters.Parameter()
@@ -427,7 +426,29 @@ public class TestSwaggerConfig implements WebMvcConfigurer {
 }
 ```
 
-### 4. 우선 Class 오류가 사라지자 냅다 서버를 띄워보았다.
+### 4. API-DOC 조회 시 오류가 발생했다.
+
+![message-converter](/images/2025-02-27-Springdoc/2025-03-05-13-40-18.png)
+
+byte[]로 응답을 보내는데 `ByteArrayHttpMessageConverter`가 먼저 작동하지 않아 발생한 [오류](https://springdoc.org/index.html#why-am-i-getting-an-error-swagger-ui-unable-to-render-definition-when-overriding-the-default-spring-registered-httpmessageconverter)였다.
+
+`root-context`에 아래처럼 Message Converter 순서를 조정해주었다.
+
+ByteArrayHttpMessageConverter가 상위에 위치해야 제대로 Response가 완성된다.
+
+```xml
+<mvc:annotation-driven>
+    <mvc:message-converters>
+        <bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter" />
+        <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+            <property name="defaultCharset" value="UTF-8" />
+        </bean>
+        <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
+    </mvc:message-converters>
+</mvc:annotation-driven>
+```
+
+### 5. 우선 Class 오류가 사라지자 냅다 서버를 띄워보았다.
 
 서버 구동은 되었지만 swagger-ui/index.html 에 접속하니 오류가 발생했다.
 
@@ -537,7 +558,6 @@ public class TestSwaggerConfig implements WebMvcConfigurer {
         };
     }
 
-    @Bean
     public OperationCustomizer addHeaderCustomizer() {
         return (operation, handlerMethod) -> {
             operation.addParametersItem(new io.swagger.v3.oas.models.parameters.Parameter()
@@ -570,7 +590,7 @@ public class TestSwaggerConfig implements WebMvcConfigurer {
 }
 ```
 
-### 5. JWT Token 인증 시 Exception 발생
+### 6. JWT Token 인증 시 Exception 발생
 
 `jsonwebtoken` 0.9.1을 사용중이었는데 이게 Spring6와 호환이 되지 않았다.
 
@@ -657,7 +677,7 @@ return Jwts.parser()
         .parseSignedClaims(token).getPayload();
 ```
 
-### 6. 이제 API를 조회해보자
+### 7. 이제 API를 조회해보자
 
 이제 됐겠지?
 
@@ -670,7 +690,7 @@ return Jwts.parser()
 - `PathVariable`  
   예전엔 자동으로 보였던 PathVariable들이 나오지 않았음.  
   `PathVariable`은 메소드 상단에 `Parameter`로 조져주니 잘 나왔음.  
-   근데 일부는 메소드 상단에 명시하지 않아도 잘 나옴. 어쩌라는건지 모르겠음.  
+   근데 일부는 메소드 상단에 명시하지 않아도 잘 나옴. 어쩌라는건지 모르겠음.
 
 - `LocalDate`, `LocalDateTime` 형식  
   일일이 다른 방식으로 변경해주었음
@@ -679,13 +699,13 @@ return Jwts.parser()
   기존엔 생략해도 잘 나오던 DTO의 Property들이 안나옴 그냥 안나옴  
   그래서 `ParameterObject`라는 Annotation을 추가로 지정 함
 
-### 7. Missing Content-Type
+### 8. Missing Content-Type
 
 이제 얼추 되가지? 이쯤 했으면 그만하자....
 
 응 안돼 더해야 해 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
 
-Content-Type을 안넣어주네? 
+Content-Type을 안넣어주네?
 
 이게 뭔가 규약에 맞게 한거라는데 get,delete일 때는 Content-Type을 안보내준다는거임...
 
@@ -702,7 +722,6 @@ Content-Type을 안넣어주네?
 OK, Let's go.
 
 ```java
-@Bean
 public OperationCustomizer addHeaderCustomizer() {
     RequestBody requestBody = new RequestBody().content(new Content().addMediaType(org.springframework.http.MediaType.APPLICATION_JSON_VALUE, new MediaType()));
 
@@ -731,13 +750,13 @@ public OperationCustomizer addHeaderCustomizer() {
 }
 ```
 
-### 8. API Group으로 나누기
+### 9. API Group으로 나누기
 
 이제 머 그럭저럭 잘 돌아감
 
 하지만 개인적으로 Group으로 나누고 싶었음
 
-그냥 아무생각없이 `GroupedOpenApi`를 여러개 생성하면 되겠지? 
+그냥 아무생각없이 `GroupedOpenApi`를 여러개 생성하면 되겠지?
 
 난 두개 필요하니까 OK 두개!!
 
@@ -777,7 +796,11 @@ GroupConfig 클래스를 별도로 생성해줘야 했음
 
 `SwaggerConfig.java` 를 3개의 클래스로 쪼개주었다.
 
+> 그리고 한가지 중요한 점!!!  
+> `SwaggerConfig` 보다 `SwaggerGroupConfig`가 먼저 초기화 되도록 반드시 `Order`를 지정해야 한다
+
 **WebMvcConfig.java**
+
 ```java
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -791,6 +814,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 ```
 
 **SwaggerConfig.java**
+
 ```java
 import org.springdoc.core.configuration.SpringDocConfiguration;
 import org.springdoc.core.properties.SpringDocConfigProperties;
@@ -805,6 +829,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
+@Order(201)
 @Configuration
 @ComponentScan(basePackages = {"org.springdoc", "kr.co.sample", "kr.co.biz"}) //Package 추가
 @Import({SpringDocConfigProperties.class,
@@ -820,6 +845,7 @@ public class TestSwaggerConfig {
 ```
 
 **SwaggerGroupConfig.java**
+
 ```java
 import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
@@ -843,6 +869,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpHeaders;
 
+@Order(200)
 @Configuration
 public class SwaggerGroupsConfig {
     @Value("#{custom['swagger.use.yn'] ?: 'N'}")
@@ -891,17 +918,6 @@ public class SwaggerGroupsConfig {
                 .in(SecurityScheme.In.HEADER)
                 .name(HttpHeaders.AUTHORIZATION)
                 .description((JwtUtil.TOKEN_TYPE_BEARER + " " + createSwaggerToken())));
-
-            openApi.getPaths().values().forEach(pathItem -> {
-                pathItem.readOperations().forEach(operation -> {
-                    operation.addParametersItem(new Parameter()
-                        .name("Content-Type")
-                        .in("header")
-                        .required(true)
-                        .schema(new io.swagger.v3.oas.models.media.Schema<>().type("string").example("application/json"))
-                    );
-                });
-            });
         };
     }
 
@@ -952,13 +968,13 @@ public class SwaggerGroupsConfig {
 
 저야 호환성 때문에 어쩔 수 없이 멱살잡고 끌고가는 중인데 3rdParty들이 호환이 안되요
 
-
 ## 근데 아직 한발 더 남았다
 
-첨부파일 잘 되는지 해봐야 함
+~~첨부파일 잘 되는지 해봐야 함~~
 
-보아하니 Multipart일 때도 이짓거리 해야 할것 같은데?! ㅋㅋㅋㅋㅋㅋㅋㅋ
+~~보아하니 Multipart일 때도 이짓거리 해야 할것 같은데?! ㅋㅋㅋㅋㅋㅋㅋㅋ~~
 
+다행히 확인해본 결과 이상없이 작동했다 🤩
 
 ## 참고URL
 
@@ -988,13 +1004,13 @@ public class SwaggerGroupsConfig {
 
 - https://blaxsior-repository.tistory.com/287
 
-- https://yeonyeon.tistory.com/322, https://yeonyeon.tistory.com/324  *최고입니다*
+- https://yeonyeon.tistory.com/322, https://yeonyeon.tistory.com/324 _최고입니다_
 
-- https://blog.naver.com/kisukim94/223773992123 *HTTP Method별 유형*
+- https://blog.naver.com/kisukim94/223773992123 _HTTP Method별 유형_
 
-- https://colabear754.tistory.com/99 *Fox -> Doc 전환*
+- https://colabear754.tistory.com/99 _Fox -> Doc 전환_
 
-- https://kdev.ing/springdoc-openapi-ui/ *Outstanding!!*
+- https://kdev.ing/springdoc-openapi-ui/ _Outstanding!!_
 
 - https://data-make.tistory.com/550
 
