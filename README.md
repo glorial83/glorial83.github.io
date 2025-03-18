@@ -52,3 +52,10 @@ path: /tags/
 ```
 jekyll serve
 ```
+
+# 포스트 내 링크
+
+```
+[랜딩페이지 수정]({% link _posts/devops/2024-09-03-devops-Codelabs-5-categories.md %}#랜딩페이지-수정)
+[Codelabs 문서 작성하기]({% link _posts/devops/2024-08-28-devops-Codelabs-2-manage.md %})
+```
