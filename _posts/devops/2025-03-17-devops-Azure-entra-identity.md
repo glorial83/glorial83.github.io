@@ -351,7 +351,3 @@ myMSALObj.logoutRedirect(logoutRequest);
 ![add-user-claim-ip](/images/2025-03-17-devops-Azure-entra-identity/2025-03-18-12-28-31.png)
 
 ![check-user-claim-ip](/images/2025-03-17-devops-Azure-entra-identity/2025-03-18-12-30-39.png)
-
-## 참고URL
-
-- https://springdoc.org/faq.html
