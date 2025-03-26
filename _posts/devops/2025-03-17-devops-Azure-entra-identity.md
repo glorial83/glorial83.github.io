@@ -214,7 +214,7 @@ function selectAccount() {
 
 나는 여기서 가져온 token으로 백엔드에서 한번 더 인증정보를 획득 후 사용하려 한다.
 
-- `myMSALObj.getActiveAccount` : 로그인된 사용자정보 획득 [#사용자정보 항목 추가]({% link _posts/devops/2025-03-17-devops-Azure-entra-identity.md %}#사용자정보-항목-추가)
+- `myMSALObj.getActiveAccount` : 로그인된 사용자정보 획득 [#사용자정보 항목 추가](#사용자정보-항목-추가)
 
 - `myMSALObj.acquireTokenSilent` : accessToken 획득
 
