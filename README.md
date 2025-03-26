@@ -27,6 +27,11 @@ bundle update
 gem install jekyll jekyll-gist jekyll-sitemap jekyll-seo-tag
 ```
 
+# uglyfy-js \_main.js 난독화
+
+npm install uglify-js
+npm run uglify && npm run add-banner
+
 # glorial83.github.io
 
 아래 내용 확인해서 변경하기
@@ -58,4 +63,5 @@ jekyll serve
 ```
 [랜딩페이지 수정]({% link _posts/devops/2024-09-03-devops-Codelabs-5-categories.md %}#랜딩페이지-수정)
 [Codelabs 문서 작성하기]({% link _posts/devops/2024-08-28-devops-Codelabs-2-manage.md %})
+[시스템구조](#-시스템구조)
 ```
