@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://glorial83.github.io/sitemap.xml
+Sitemap: http://glorial83.github.io/sitemap.xml
