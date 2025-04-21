@@ -68,6 +68,12 @@ for REPO in $REPO_PATHS; do
 done
 ```
 
+> 만약 Permission Denied 오류가 발생한다면 아래처럼 실행 권한을 주자
+
+```bash
+chmod -R 775 /var/opt/gitlab/git-data/repositories/RELATIVE_PATH/objects/pack
+```
+
 ## 스크립트 수행결과 확인
 
 ### 에러가 발생중인 Repo 췍
