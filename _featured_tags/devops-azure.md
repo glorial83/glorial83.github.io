@@ -4,5 +4,5 @@ title: Azure
 slug: azure
 category: devops
 menu: false
-order: 7
+order: 8
 ---
