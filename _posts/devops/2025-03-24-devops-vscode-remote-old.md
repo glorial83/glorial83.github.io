@@ -1,5 +1,5 @@
 ---
-title: "(구)VSCode Server 구축"
+title: "VSCode Server 구축"
 categories: devops
 tags: vscode code-server remote serve-web code
 last_modified_at: 2025-03-24T12:00:00+09:00
@@ -360,6 +360,10 @@ Tomcat extension은 프로젝트 이름을 사용하기 때문에 해당 부분�
 
 근데 왜 MSDN이든 어디든 serve-web에 대한 공식 설명이 없었다.
 
-왜일까 궁금했는데 옛날 방식이라고 하더라.........구성 다해놨는데........
+~~왜일까 궁금했는데 옛날 방식이라고 하더라.........구성 다해놨는데........~~
 
-힘이 빠지지만 새로운 방식으로 다음 글을 작성해보겠다!!!!
+~~힘이 빠지지만 새로운 방식으로 다음 글을 작성해보겠다!!!!~~
+
+현재까지도 CLI에서 동작하는걸 봐선 그냥 공식 설명이 누락된것 같다.
+
+암튼 Docker도 지원 되니 [coder code-server](https://github.com/coder/code-server) 요걸 사용하면 조금 더 간편할 듯 하다.
