@@ -131,7 +131,7 @@ minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon
 
 ```yaml
 locale: "ko-KR" #로케일
-title: "머리나쁜 개발자 블로그" #블로그 메인 제목
+title: "Glo 개발자 블로그" #블로그 메인 제목
 name: "glorial" #이름
 url: "https://glorial83.github.io" #블로그 URL
 repository: glorial83/glorial83.github.io # GitHub 아이디/Repository이름
